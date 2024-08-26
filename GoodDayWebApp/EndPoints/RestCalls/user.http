@@ -1,0 +1,88 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+# debug
+@app_base=https://localhost:7170
+
+# azure
+#@app_base=https://gooddaywebapp.azurewebsites.net
+
+# webservice
+#@app_base=http://localhost:5000
+
+# end settings
+
+@userName=mprtenjak
+@userPass=mprtenjak
+
+### Sign up user
+
+# no data
+
+POST {{app_base}}/users/sign-up
+Content-Type: application/json
+Accept-Language: si-SL,en;q=0.5
+
+### Try login
+POST {{app_base}}/users/try-login
+Content-Type: application/json
+Accept-Language: si, si-SL,en;q=0.5
+
+### Signup and get token
+POST {{app_base}}/users/sign-up
+Accept-Language: si, si-SL,en;q=0.5
+Content-Type: application/json
+
+{
+  "userName": "{{userName}}",
+  "password1": "{{userPass}}",
+  "password2": "{{userPass}}"
+}
+
+
+### Login user - wrong object
+
+POST {{app_base}}/users/login
+Content-Type: application/json
+Accept-Language: si-SL,en;q=0.5
+
+{
+  "userName": "{{userName}}",
+  "password": "{{userPass}}"
+}
+
+### randomize
+
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiVXNlciIsIlVzZXJJZCI6IjEiLCJuYmYiOjE3MjAxMTc2NjEsImV4cCI6MTcyMDEyMTI2MSwiaWF0IjoxNzIwMTE3NjYxLCJpc3MiOiJodHRwczovL3lvdXJkb21haW4uY29tIiwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSJ9.PouTIOMIiBKy32OisHui-AbnEpdCoQHBZp2KYV8Sh5U
+
+POST {{app_base}}/admin/randomize-data
+Authorization: Bearer {{token}}
+Accept-Language: si-SL,en;q=0.5
+Content-Type: application/json
+Accept: application/json
+
+### gratitude
+
+POST {{app_base}}/gratitude
+Authorization: Bearer {{token}}
+Accept-Language: si-SL,en;q=0.5
+Content-Type: application/json
+Accept: application/json
+
+{
+  "date": "2024-07-01",
+  "content": [ "string1", "test2", "test3" ]
+}
+
+### gratitude for month
+
+GET {{app_base}}/gratitude/2024-06
+Authorization: Bearer {{token}}
+Accept-Language: si-SL,en;q=0.5
+Accept: application/json
+
+
+### info about the system
+
+GET {{app_base}}/admin/info
+Accept-Language: si-SL,en;q=0.5
+Accept: application/json

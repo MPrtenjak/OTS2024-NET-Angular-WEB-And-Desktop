@@ -1,0 +1,54 @@
+<div class="p-4 overflow-auto">
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th colspan="7">    
+        <h5>
+          <button class="btn btn-outline-success float-start" type="button"  (click)="onPrevMonthClick()">
+            <svg class="bi bi-arrow-left" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path>
+            </svg>
+            {{ prevMonthName}}
+          </button>
+
+          {{monthName}}
+
+                
+          <button class="btn btn-outline-success float-end" type="button" (click)="onNextMonthClick()" [disabled]="isNextMonthDisabled()">
+          {{ nextMonthName}}
+          <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+          </svg>
+      </button>          
+        </h5>
+      </th>
+    </tr>
+    <tr>
+      <th *ngFor="let nameOfDay of nameOfDays">    
+        <h5>{{ nameOfDay }}</h5>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let week of weeks">
+      <td class="text-center" *ngFor="let day of week">
+        <ng-container *ngIf="day">
+          <button type="button" [ngClass]="getClassForDay(day)" [disabled]="isDayDisabled(day)" (click)="onDateClick(day)">
+            {{ day | date:'dd' }}
+
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              *ngIf="countNumberOfGratitudes(day!) > 0">
+              {{ countNumberOfGratitudes(day!) }}
+            </span>
+          </button>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="text-end">
+  <button class="btn btn-success btn-sm" (click)="setRandomData()">Izmisli si podatke</button>
+</div>
+</div>
+
+<app-gratitude [gratitudeByDate]="gratitudesOnActiveDay" (gratitudeUpdated)="handleGratitudeUpdate()"></app-gratitude>

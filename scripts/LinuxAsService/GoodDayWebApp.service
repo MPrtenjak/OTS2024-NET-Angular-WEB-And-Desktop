@@ -1,0 +1,15 @@
+[Unit]
+Description=GoodDayService
+
+[Service]
+WorkingDirectory=
+ExecStart=/usr/bin/dotnet GoodDayWebApp.dll
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=GoodDayWebApp
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_RUNNING_IN_SERVICE=1
+
+[Install]
+WantedBy=multi-user.target

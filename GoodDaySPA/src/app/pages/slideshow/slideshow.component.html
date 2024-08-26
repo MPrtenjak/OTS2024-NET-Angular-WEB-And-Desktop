@@ -1,0 +1,13 @@
+<div class="container" [ngStyle]="{ 'font-size': Zoom }">
+  <app-slideshow-commander 
+    [slideShowPosition]="slideShowPosition"
+    (slideChange)="slideChange($event)"
+    (zoomChange)="zoomChange($event)"
+  ></app-slideshow-commander>
+
+  <div>&nbsp;</div>
+
+  <app-slideshow-presenter
+    [currentSlide]="CurrentSlide"
+    ></app-slideshow-presenter>
+</div>  

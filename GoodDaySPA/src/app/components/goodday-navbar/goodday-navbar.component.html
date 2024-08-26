@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">PrijetenDan</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" (click)="isCollapsed = !isCollapsed"></span>
+      </button>
+      <div [ngClass]="{'collapse': isCollapsed, 'navbar-collapse': true}" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <div class="vstack gap-1 environment-nav">
+              <div class="environment-div">
+                <span class="fw-bolder text-start">Okolje: </span>
+                <span>{{ authInfo.environment }}</span>
+              </div>
+              <div class="environment-div" *ngIf="authInfo.IsAuthenticated">
+                <span class="fw-bolder text-start">Uporabnik: </span>
+                <span>{{ authInfo.user }}</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto" *ngIf="!authInfo.IsAuthenticated">
+          <li class="nav-item">
+            <a class="nav-link" href="slideshow">Prezentacija</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Vpis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sign-in">Prijava</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto" *ngIf="authInfo.IsAuthenticated">
+          <li class="nav-item">
+            <a class="nav-link" href="slideshow">Prezentacija</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/notes">Hvaležnosti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/info">Info</a>
+          </li>
+          <li class="nav-item" *ngIf="authInfo.NeedLogin">
+            <a class="nav-link" href="#" (click)="logout()">Izpis</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

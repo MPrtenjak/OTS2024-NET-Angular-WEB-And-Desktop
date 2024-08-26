@@ -1,0 +1,19 @@
+.full-viewport {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    // background-color: lightblue;
+    flex-direction: column;
+
+    .top-div {
+        padding: 20px;
+        // background-color: lightcoral;
+    }
+
+    .bottom-div {
+        flex-grow: 1;
+        padding: 20px;
+        // background-color: lightgreen;
+        overflow-y: auto;
+    }
+}

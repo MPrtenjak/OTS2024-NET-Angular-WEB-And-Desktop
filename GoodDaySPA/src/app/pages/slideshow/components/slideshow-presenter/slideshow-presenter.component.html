@@ -1,0 +1,9 @@
+<div *ngIf="currentSlide" class="slide">
+    <div>
+        <div #slideTitle class="slide-h1 text-center animate__animated animate__zoomIn">{{ currentSlide.caption }}</div>
+    </div>
+
+    <hr />
+    
+    <div [innerHTML]="currentSlide.content"></div>
+</div>

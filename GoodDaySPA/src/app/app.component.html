@@ -1,0 +1,9 @@
+<div class="full-viewport">
+  <div class="top-div" *ngIf="!isSlideshowRoute">
+    <app-goodday-navbar [authInfo]="authInfo"></app-goodday-navbar>
+  </div>
+
+  <div class="bottom-div">
+    <router-outlet></router-outlet>
+  </div>
+</div>

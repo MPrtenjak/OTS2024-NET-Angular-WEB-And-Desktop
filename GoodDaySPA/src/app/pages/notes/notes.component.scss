@@ -1,0 +1,13 @@
+// select ul with class .nav
+ul.nav {
+    li {
+        display: inline;
+        margin: 10px 30px;
+    }    
+
+    .active-month {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-weight: bold;
+    }
+}

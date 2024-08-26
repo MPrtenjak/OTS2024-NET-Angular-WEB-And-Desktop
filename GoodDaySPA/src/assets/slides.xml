@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<slides>
+
+<!--  SLIDE -->
+<slide>
+    <caption>OTS 2023 - WinForms "face-lift"</caption>
+    <content>
+<div class="slide-h2"><u>2023</u>: Imamo <b>staro WinForms aplikacijo</b>, ki ji želimo <b>izboljšati UI</b></div>
+
+<ul>
+  <li><i>Kaj je Blazor Hibrid in kako nam lahko pomaga tudi pri nadgradnji programske opreme?</i></li>
+  <li>Starim stvarem želimo povrniti sijaj</li>
+  <li>Še vedno lahko imamo "stare razvijalce", ki morajo nadgraditi SW ali pa "mlajše razvijalce", ki ne marajo "starega sr..ja".</li>
+  <li><b>POMEMBNO!</b> - pri nadgradnji smo uporabili staro kodo, zamenjali smo samo uporabniški vmesnik!</li>
+</ul>
+
+<div class="text-center">
+    <img src="/assets/imgs/ots2023.png" />
+</div>    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Angular in .NET kot konkurenca namiznim aplikacijam</caption>
+    <content>
+<ul>
+  <li>Zdaj imamo pa mlade razvijalce, ki bi razvijali za splet!</li>
+  <li>Ma kaj razvijalci, <b>NAROČNIK JE POMEMBEN!</b></li>
+  <li>Kako razviti aplikacijo, ki lahko <b>teče tako na spletu kot tudi na namizju</b></li>
+</ul>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Aplikacija prijeten dan</caption>
+    <content>
+<div class="slide-h2">Namen</div>
+
+Vsak dan uporabnik vnese do največ 3 kratke opise zakaj je hvaležen
+
+<div class="slide-h2">Zahteve</div>
+
+<ul>
+<li>App naj deluje v:</li>
+  <ul>
+    <li><b>Azure</b> - <i>zahteva prijavo</i></li>
+    <li><b>Windows</b></li>
+      <ul>
+        <li><b>Kot navadna aplikacija </b>- <i>ne zahteva prijave</i>, prijavljen je trenutni uporabnik</li>
+        <li><b>Kot servis</b> - <i>ne zahteva prijave</i>, prijavljen je trenutni uporabnik</li>
+      </ul>
+    <li><b>Linux</b></li>
+      <ul>
+        <li><b>Kot navadna aplikacija</b> - <i>ne zahteva prijave</i>, prijavljen je trenutni uporabnik</li>
+        <li><b>Kot servis/deamon</b> - <i>zahteva prijavo</i></li>
+      </ul>
+  </ul>
+<li>Prenos med sistemi je <b>kopiraj / prilepi</b></li>
+</ul>
+
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Aplikacija prijeten dan</caption>
+    <content>
+<div class="slide-h2">Strežniški del - .NET (core)</div>
+<ul>
+<li><b>Nudi API</b>, ki ga uporabi uporabniški del</li>
+<li>Skrbi za <b>dostop do podatkov</b></li>
+</ul>
+
+<div class="slide-h2">Uporabniški del - Angular</div>
+<ul>
+<li><b>Uporablja API</b> za dostop do podatkov</li>
+<li>Uporabniku <b>izrisuje uporabniški vmesnik</b></li>
+</ul>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>.NET → API → Swagger</caption>
+    <content>
+<div class="text-center">    
+    <img src="/assets/imgs/swagger.png" />
+</div>    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>wwwroot - privzeto uporablja Kastrel spletni strežnik</caption>
+    <content>
+<div class="text-center">    
+    <img src="/assets/imgs/wwwroot.png" />
+</div>    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Če je v mapi aplikacija bo WebApi prikazoval aplikacijo</caption>
+    <content>
+<div class="text-center">    
+    <img src="/assets/imgs/app.png" />
+</div>    
+    </content>
+</slide>
+
+
+<!--  SLIDE -->
+<slide>
+    <caption>DEMONSTRACIJA</caption>
+    <content>
+    </content>
+</slide>
+
+
+<!--  SLIDE -->
+<slide>
+    <caption>.NET že v osnovi teče na različnih operacijskih sistemih</caption>
+    <content>
+<div class="text-center">    
+    <img src="/assets/imgs/runtimes.png" />
+</div>	    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Na kaj biti pozoren - .NET, strežniški del</caption>
+    <content>
+<div class="slide-h3">`ISupportedEnvironment`</div>
+<div class="slide-h3">Inicializacija aplikacije</div>
+<div class="slide-h3">Detekcija izvajalnega okolja</div>
+<div class="slide-h3">Detekcija uporabnika</div>
+<div class="slide-h3">CORS (Cross-Origin Resource Sharing)</div>
+<div class="slide-h3">Usmerjanje (Routing)</div>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<!--
+<slide>
+    <caption>`ISupportedEnvironment`</caption>
+    <content>
+<pre>
+public interface ISupportedEnvironment
+{
+  string Name { get; }
+  bool RequireLogin { get => true; }
+  bool OpenBrowser { get => false; }
+  void ApplyDeamon(ConfigureHostBuilder configureHostBuilder) { }
+}
+</pre>
+
+<pre>
+public class WindowsAsProgramEnvironment : ISupportedEnvironment
+{
+  public string Name => nameof(WindowsAsProgramEnvironment);
+  public bool RequireLogin { get => false; }
+  public bool OpenBrowser { get => true; }
+}
+</pre>
+
+<pre>
+public class LinuxAsServiceEnvironment : ISupportedEnvironment
+{
+  public string Name => nameof(LinuxAsServiceEnvironment);
+  public void ApplyDeamon(ConfigureHostBuilder configureHostBuilder) 
+    => configureHostBuilder.UseSystemd();
+}
+</pre>
+    </content>
+</slide>
+-->
+
+<!--  SLIDE -->
+<slide>
+    <caption>Na kaj biti pozoren - Angular, uporabniški vmesnik</caption>
+    <content>
+
+<div>Tu ni <b>nobenih posebnosti</b>, saj gre za povsem <b>navadno angular aplikacijo</b>, ki <b>komunicira s strežnikom</b> preko API-ja</div>
+
+<div class="slide-h3">
+Ker <b>teče znotraj .NET aplikacije</b>, ki služi kot strežnik, lahko Angular pridobi lasten naslov kar preko JavaScripta: `<code>window.location.origin</code>`
+</div>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>DEMONSTRACIJA II</caption>
+    <content>
+<div class="slide-h2">Kaj bom počel</div>
+<div class="slide-h3">Izvedel aplikacijo v <i>Windows</i> okolju kot "navadno aplikacijo"</div>
+<div class="slide-h3">Izvedel aplikacijo v <i>Windows</i> okolju kot "storitev"</div>
+<div class="slide-h3"><i>Skopiral</i> aplikacijo v <i>LINUX</i></div>
+<div class="slide-h3">Izvedel aplikacijo v <i>Linux</i> okolju kot "navadno aplikacijo"</div>
+<div class="slide-h3">Izvedel aplikacijo v <i>Linux</i> okolju kot "storitev/deamon"</div>
+<div class="slide-h3"><i>Skopiral</i> aplikacijo na <i>Azure</i></div>
+<div class="slide-h3">Izvedel aplikacijo na <i>Azure</i></div>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Vprašanja in odgovori</caption>
+    <content>
+<div class="slide-h2">Matjaž Prtenjak, ENDAVA d.o.o</div>
+
+<table>
+<tr><td><i class="fa-solid fa-briefcase" style="color: red"></i></td><td class="wide">:</td><td><a href="https://www.endava.com/en/Endava">https://www.endava.com/en/Endava</a></td></tr>
+<tr><td><i class="fa-solid fa-brands fa-github" style="color: red"></i></td><td class="wide">:</td><td><b>@MPrtenjak</b></td></tr>
+<tr><td><i class="fa-solid fa-envelope"></i></td><td class="wide">:</td><td><b>matjaz.prtenjak@endava.com</b></td></tr>
+<tr><td><i class="fa-solid fa-house" style="color: red"></i></td><td class="wide">:</td><td><b><a href="https://mnet.si">https://mnet.si</a></b></td></tr>
+<tr><td><i class="fa-solid fa-pencil" style="color: red"></i></td><td class="wide">:</td><td><b><a href="https://code-maze.com/author/mprtenjak/">https://code-maze.com/author/mprtenjak/</a></b></td></tr>
+</table>
+
+    </content>
+</slide>
+
+
+</slides>

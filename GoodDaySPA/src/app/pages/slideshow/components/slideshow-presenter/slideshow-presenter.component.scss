@@ -1,0 +1,44 @@
+.slide .slide-h1 {
+    color: mediumblue;
+    font-size: 140%;
+    font-weight: bold;
+}
+
+::ng-deep .slide .slide-h2 {
+    color: mediumblue;
+    font-size: 120%;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+::ng-deep .slide .slide-h3 {
+    &::before {
+        content: '*'; /* Unicode for bullet character */
+        font-size: 140%;
+        color: mediumblue; /* Color of the bullet */
+        margin-right: 0.5rem; /* Space between bullet and text */
+    }
+    
+    font-size: 110%;
+    font-weight: bold;
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
+}
+
+::ng-deep .slide b {
+    color: mediumblue;
+    font-size: 110%;
+    font-weight: 300;
+}
+
+::ng-deep .slide i {
+    color: rgb(180, 3, 3);
+    font-size: 105%;
+}
+
+
+::ng-deep .slide .wide {
+    width: 30px;
+    text-align: center;
+}

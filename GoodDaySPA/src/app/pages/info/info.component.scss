@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+td pre {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.first-column {
+    width: 130px;
+    overflow: hidden;
+}

@@ -1,0 +1,22 @@
+# User-specific files
+*.user
+
+# Output-folders
+bin/
+obj/
+publish/
+dist/
+
+# VS folders
+.vs/
+packages/
+
+# VUE/NUXT
+.nuxt
+node_modules/
+
+# NOTEBOOK
+.ipynb_checkpoints/
+
+# RELEASE
+GoodDayRelease/

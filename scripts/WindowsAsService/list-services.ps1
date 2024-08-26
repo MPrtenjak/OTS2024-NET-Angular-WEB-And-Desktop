@@ -1,0 +1,1 @@
+Get-Service -ErrorAction SilentlyContinue | Where-Object { $_.Name -eq "GoodDay" } | Format-List

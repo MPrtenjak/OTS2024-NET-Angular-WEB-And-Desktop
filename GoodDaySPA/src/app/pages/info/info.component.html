@@ -1,0 +1,43 @@
+<div class="container  animate__animated animate__zoomIn" *ngIf="infoData">
+  <!--
+  <table>
+    <tbody>
+      <tr>
+        <td>Datoteka</td>
+        <td style="width: 80%"><pre>{{ infoData.configuration | json }}</pre></td>
+      </tr>
+    </tbody>
+  </table>
+  -->
+
+  <table class="table">
+    <tbody>
+      <tr>
+        <th class="first-column" scope="row">Datoteka</th>
+        <td>{{ infoData.name }}</td>
+      </tr>
+      <tr>
+        <th class="first-column"  scope="row">Pot</th>
+        <td>{{ infoData.path }}</td>
+      </tr>
+      <tr>
+        <th class="first-column"  scope="row">Okolje</th>
+        <td>{{ infoData.currentEnvironment }}</td>
+      </tr>
+      <tr>
+        <th class="first-column"  scope="row">Uporabnik</th>
+        <td>{{ infoData.user }}</td>
+      </tr>
+      <tr>
+        <th class="first-column"  scope="row">Nastavitve okolja</th>
+        <td>
+          <pre>{{ infoData.configuration | json }}</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="error" class="alert alert-danger" role="alert">
+  {{ error }}
+</div>
