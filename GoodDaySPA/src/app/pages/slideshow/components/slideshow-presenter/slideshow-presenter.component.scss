@@ -1,4 +1,4 @@
-.slide .slide-h1 {
+::ng-deep .slide .slide-h1 {
     color: mediumblue;
     font-size: 140%;
     font-weight: bold;
@@ -37,8 +37,12 @@
     font-size: 105%;
 }
 
-
 ::ng-deep .slide .wide {
     width: 30px;
+    text-align: center;
+}
+
+::ng-deep .slide .full-screen {
+    width: 100%;
     text-align: center;
 }

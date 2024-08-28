@@ -18,7 +18,7 @@ export class SlideshowCommanderComponent {
 
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
-    if (event.key === 'ArrowRight' || event.key === 'ArrowUp' || event.key === 'PageUp') this.nextSlide();
+    if (event.key === 'ArrowRight' || event.key === 'ArrowUp' || event.key === 'PageUp' || event.key === ' ') this.nextSlide();
     if (event.key === 'ArrowLeft' || event.key === 'ArrowDown' || event.key === 'PageDown') this.previousSlide();
 
     if (event.key === 'Home' || event.key === 'AudioVolumeUp') this.zoomIn();

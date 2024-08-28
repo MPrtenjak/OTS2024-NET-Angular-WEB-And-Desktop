@@ -3,6 +3,16 @@
 
 <!--  SLIDE -->
 <slide>
+    <caption>Na splet ali na namizje 🤔?</caption>
+    <content>
+<div class="text-center">    
+    <img class="full-screen" src="/assets/imgs/net-or-web-small.webp" />
+</div>    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
     <caption>OTS 2023 - WinForms "face-lift"</caption>
     <content>
 <div class="slide-h2"><u>2023</u>: Imamo <b>staro WinForms aplikacijo</b>, ki ji želimo <b>izboljšati UI</b></div>
