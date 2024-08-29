@@ -1,6 +1,6 @@
-::ng-deep .slide .slide-h1 {
+::ng-deep .slide-h1 {
     color: mediumblue;
-    font-size: 140%;
+    font-size: 10 0%;
     font-weight: bold;
 }
 
@@ -42,7 +42,12 @@
     text-align: center;
 }
 
-::ng-deep .slide .full-screen {
+::ng-deep .slide .full-screen-width {
     width: 100%;
+    text-align: center;
+}
+
+::ng-deep .slide .full-screen-height {
+    height: 800px;
     text-align: center;
 }

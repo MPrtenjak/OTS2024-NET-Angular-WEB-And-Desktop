@@ -6,7 +6,7 @@
     <caption>Na splet ali na namizje 🤔?</caption>
     <content>
 <div class="text-center">    
-    <img class="full-screen" src="/assets/imgs/net-or-web-small.webp" />
+    <img class="full-screen-height" src="/assets/imgs/net-or-web-small.webp" />
 </div>    
     </content>
 </slide>
@@ -207,13 +207,13 @@ Ker <b>teče znotraj .NET aplikacije</b>, ki služi kot strežnik, lahko Angular
     <caption>DEMONSTRACIJA II</caption>
     <content>
 <div class="slide-h2">Kaj bom počel</div>
-<div class="slide-h3">Izvedel aplikacijo v <i>Windows</i> okolju kot "navadno aplikacijo"</div>
-<div class="slide-h3">Izvedel aplikacijo v <i>Windows</i> okolju kot "storitev"</div>
-<div class="slide-h3"><i>Skopiral</i> aplikacijo v <i>LINUX</i></div>
-<div class="slide-h3">Izvedel aplikacijo v <i>Linux</i> okolju kot "navadno aplikacijo"</div>
-<div class="slide-h3">Izvedel aplikacijo v <i>Linux</i> okolju kot "storitev/deamon"</div>
-<div class="slide-h3"><i>Skopiral</i> aplikacijo na <i>Azure</i></div>
-<div class="slide-h3">Izvedel aplikacijo na <i>Azure</i></div>
+<div class="slide-h3"><b>WIN: </b>Izvedel aplikacijo v <i>Windows</i> okolju kot "navadno aplikacijo"</div>
+<div class="slide-h3"><b>LX: </b><i>Skopiral</i> aplikacijo v <i>LINUX</i></div>
+<div class="slide-h3"><b>LX: </b>Izvedel aplikacijo v <i>Linux</i> okolju kot "navadno aplikacijo"</div>
+<div class="slide-h3"><b>WIN: </b>Izvedel aplikacijo v <i>Windows</i> okolju kot "storitev"</div>
+<div class="slide-h3"><b>LX: </b>Izvedel aplikacijo v <i>Linux</i> okolju kot "storitev/deamon"</div>
+<div class="slide-h3"><b>AZ: </b><i>Skopiral</i> aplikacijo na <i>Azure</i></div>
+<div class="slide-h3"><b>AZ: </b>Izvedel aplikacijo na <i>Azure</i></div>
     </content>
 </slide>
 

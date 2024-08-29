@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, HostListener } from '@angular/core';
 import { SlideShowPosition, initialSlideshowPosition } from '../../data/slideshowData';
+import { SlideData } from '../../data/slideshowData';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SlideshowCommanderComponent {
   @Input() slideShowPosition: SlideShowPosition = initialSlideshowPosition;
+  @Input() currentSlide: SlideData | null = null;
   @Output() zoomChange = new EventEmitter<number>();
   @Output() slideChange = new EventEmitter<number>();
 
