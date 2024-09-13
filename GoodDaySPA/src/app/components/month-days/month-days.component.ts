@@ -41,7 +41,6 @@ export class MonthDaysComponent {
   ngOnInit() {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       dayjs.locale(event.lang);
-      console.log('Language changed to:', event.lang);
       this.getDayNames();
       this.getMonthNames();
     });
@@ -62,7 +61,6 @@ export class MonthDaysComponent {
       }
 
       this.nameOfDays[i - 1] = dayName;
-      console.log(this._active_date.format('ddd'));
     }
   }
 
@@ -70,7 +68,6 @@ export class MonthDaysComponent {
     this.nameOfMonths[0] = dayjs(this.active_date.add(-1, 'month').toDate()).format('MMMM');
     this.nameOfMonths[1] = dayjs(this.active_date.toDate()).format('MMMM YYYY').toLocaleUpperCase();
     this.nameOfMonths[2] = dayjs(this.active_date.add(1, 'month').toDate()).format('MMMM');
-    console.log(this.nameOfMonths);
   }  
 
   onDateClick(date: Date | null) {
