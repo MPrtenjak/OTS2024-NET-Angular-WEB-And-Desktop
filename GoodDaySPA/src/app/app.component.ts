@@ -6,7 +6,9 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AuthInfo, userNotAuthenticated } from '@rest_data/authInfo';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 import { GooddayNavbarComponent } from '@components/goodday-navbar/goodday-navbar.component';
+import * as dayjs from 'dayjs';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +29,14 @@ export class AppComponent implements OnInit, OnDestroy {
   private routerSubscription: Subscription | null = null;  
   isSlideshowRoute: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private translate: TranslateService) {
+    translate.addLangs(['sl', 'en']); 
+    translate.setDefaultLang('sl'); 
+  }
+
+  changeLanguage(lang: string) {
+    this.translate.use(lang);
+  }
 
   ngOnInit(): void {
     this.authInfoSubscription = this.authService.authInfo$.subscribe(authInfo => {

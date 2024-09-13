@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '@app/api.service';
 import { Gratitude } from '@rest_data/gratitude';
@@ -6,6 +6,7 @@ import { GratitudeComponent } from '@components/gratitude/gratitude.component';
 import { GratitudeByDate, transformGratitudeToGratitudeByDate, transformDateToString } from '@rest_data/gratitudeByDate';
 import { firstValueFrom } from 'rxjs';
 import dayjs, { Dayjs } from 'dayjs'
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-month-days',
@@ -21,7 +22,8 @@ export class MonthDaysComponent {
   gratitudesByDateMap: Map<string, GratitudeByDate> = new Map();
   gratitudesOnActiveDay: GratitudeByDate = { date: '', content: [] };
   weeks:(Date | null)[][] = [];
-  nameOfDays: string[] = [];
+  nameOfDays: string[] = ["", "", "", "", "", "", ""];
+  nameOfMonths: string[] = ["", "", ""];
   today = dayjs();
   last_read_month: number = -1;
 
@@ -36,8 +38,18 @@ export class MonthDaysComponent {
     }
   }
 
-  constructor(private apiService: ApiService) {
+  ngOnInit() {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      dayjs.locale(event.lang);
+      console.log('Language changed to:', event.lang);
+      this.getDayNames();
+      this.getMonthNames();
+    });
+  }
+
+  constructor(private apiService: ApiService, private translate: TranslateService) {
     this.getDayNames();
+    this.getMonthNames();
     this.onActiveDateChange();
   }
 
@@ -49,20 +61,16 @@ export class MonthDaysComponent {
         dayName = dayName.slice(0, -1);
       }
 
-      this.nameOfDays.push(dayName);
+      this.nameOfDays[i - 1] = dayName;
+      console.log(this._active_date.format('ddd'));
     }
   }
 
-  get monthName(): string {
-    return this.active_date.format('MMMM YYYY').toLocaleUpperCase();
-  }
-
-  get prevMonthName(): string {
-    return this.active_date.add(-1, 'month').format('MMMM')
-  }
-
-  get nextMonthName(): string {
-    return this.active_date.add(1, 'month').format('MMMM')
+  private getMonthNames() {
+    this.nameOfMonths[0] = dayjs(this.active_date.add(-1, 'month').toDate()).format('MMMM');
+    this.nameOfMonths[1] = dayjs(this.active_date.toDate()).format('MMMM YYYY').toLocaleUpperCase();
+    this.nameOfMonths[2] = dayjs(this.active_date.add(1, 'month').toDate()).format('MMMM');
+    console.log(this.nameOfMonths);
   }  
 
   onDateClick(date: Date | null) {
@@ -88,6 +96,7 @@ export class MonthDaysComponent {
 
   onActiveDateChange(): void {
     this.gratitudesOnActiveDay = this.activeGratitudeByDate();
+    this.getMonthNames();
 
     if (this.last_read_month == this.active_date.month()) 
       return;
