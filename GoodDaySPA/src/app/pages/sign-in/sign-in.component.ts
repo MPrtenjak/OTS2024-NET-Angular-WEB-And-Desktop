@@ -5,6 +5,7 @@ import { InfoComponent } from '@pages/info/info.component';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface SignUpError {
   detail: string;
@@ -18,7 +19,7 @@ interface SignUpError {
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [CommonModule, InfoComponent, FormsModule],
+  imports: [CommonModule, InfoComponent, FormsModule, TranslateModule],
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })

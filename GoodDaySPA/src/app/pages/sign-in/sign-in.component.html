@@ -7,27 +7,27 @@
       <div class="card-body">
         <form>
           <div class="form-group mb-3">
-            <label for="username">Uporabniško ime</label>
+            <label for="username">{{ 'SIGN_IN.USERNAME' | translate }}</label>
             <input [(ngModel)]="username" name="username" type="text" class="form-control" placeholder="Vpiši uporabniško ime">
             <div class="text-danger" *ngIf="usernameError">
               {{ usernameError }}
             </div>
           </div>
           <div class="form-group mb-3">
-            <label for="password1">Geslo</label>
+            <label for="password1">{{ 'SIGN_IN.PASSWORD' | translate }}</label>
             <input [(ngModel)]="password1" name="password1" type="password" class="form-control" placeholder="Vpiši geslo">
             <div class="text-danger" *ngIf="password1Error">
               {{ password1Error }}
             </div>
           </div>
           <div class="form-group mb-3">
-            <label for="password2">Potrdi geslo</label>
+            <label for="password2">{{ 'SIGN_IN.PASSWORD2' | translate }}</label>
             <input [(ngModel)]="password2" name="password2" type="password" class="form-control" placeholder="Potrdi geslo">
             <div class="text-danger" *ngIf="password2Error">
               {{ password2Error }}
             </div>
           </div>
-          <button type="button" class="btn btn-primary w-100" (click)="signIn()">Vpis</button>
+          <button type="button" class="btn btn-primary w-100" (click)="signIn()">{{ 'SIGN_IN.PASSWORD2' | translate }}</button>
           <div class="text-danger mt-3" *ngIf="signInError">
             {{ signInError }}
           </div>

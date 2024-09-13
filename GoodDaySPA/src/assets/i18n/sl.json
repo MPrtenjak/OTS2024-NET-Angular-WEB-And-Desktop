@@ -1,3 +1,41 @@
 {
-    "APP_NAME": "PrijetenDan"
+    "APP_NAME": "PrijetenDan",
+    "NAVBAR": {
+        "LANGUAGE": "Spremeni jezik",
+        "PRESENTATION": "Prezentacija",
+        "SIGN_IN": "Vpis",
+        "LOGIN": "Prijava",
+        "LOGOUT": "Odava",
+        "GRATITUDES": "Hvaležnosti",
+        "INFO": "Info",
+        "AUTH_INFO": {
+            "SYSTEM": "Okolje",
+            "USER": "Uporabnik"
+        }
+    },
+    "MONTH_DAY": {
+        "RANDOMIZE": "Izpisli si podatke"
+    },
+    "GRATITUDE": {
+        "GRATITUDE": "Hvaležnost",
+        "COMMIT": "Shrani"
+    },
+    "INFO": {
+        "FILE": "Datoteka",
+        "PATH": "Pot",
+        "ENVIRONMENT": "Okolje",
+        "USER": "Uporabnik", 
+        "ENVIRONMENT_VARIABLES": "Nastavitve okolja"
+    },
+    "LOGIN": {
+        "USERNAME": "Uporabniško ime",
+        "PASSWORD": "Geslo",
+        "LOGIN": "Prijava"
+    },
+    "SIGN_IN": {
+        "USERNAME": "Uporabniško ime",
+        "PASSWORD": "Geslo",
+        "PASSWORD2": "Ponovi geslo",
+        "SIGN_IN": "Vpis"
+    }
 }

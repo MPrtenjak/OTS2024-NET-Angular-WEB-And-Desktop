@@ -6,12 +6,12 @@ import { GratitudeComponent } from '@components/gratitude/gratitude.component';
 import { GratitudeByDate, transformGratitudeToGratitudeByDate, transformDateToString } from '@rest_data/gratitudeByDate';
 import { firstValueFrom } from 'rxjs';
 import dayjs, { Dayjs } from 'dayjs'
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent, TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-month-days',
   standalone: true,
-  imports: [CommonModule, GratitudeComponent],
+  imports: [CommonModule, GratitudeComponent, TranslateModule],
   templateUrl: './month-days.component.html',
   styleUrl: './month-days.component.scss'
 })

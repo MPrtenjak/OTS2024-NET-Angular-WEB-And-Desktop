@@ -10,11 +10,11 @@
           <li class="nav-item">
             <div class="vstack gap-1 environment-nav">
               <div class="environment-div">
-                <span class="fw-bolder text-start">Okolje: </span>
+                <span class="fw-bolder text-start">{{ 'NAVBAR.AUTH_INFO.SYSTEM' | translate }}: </span>
                 <span>{{ authInfo.environment }}</span>
               </div>
               <div class="environment-div" *ngIf="authInfo.IsAuthenticated">
-                <span class="fw-bolder text-start">Uporabnik: </span>
+                <span class="fw-bolder text-start">{{ 'NAVBAR.AUTH_INFO.USER' | translate }}: </span>
                 <span>{{ authInfo.user }}</span>
               </div>
             </div>
@@ -22,32 +22,32 @@
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" (click)="lang()">Change Language</a>
+            <a class="nav-link" (click)="lang()">{{ 'NAVBAR.LANGUAGE' | translate }}</a>
           </li>
         </ul>        
         <ul class="navbar-nav ms-auto" *ngIf="!authInfo.IsAuthenticated">
           <li class="nav-item">
-            <a class="nav-link" href="slideshow">Prezentacija</a>
+            <a class="nav-link" href="slideshow">{{ 'NAVBAR.PRESENTATION' | translate }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login">Vpis</a>
+            <a class="nav-link" href="/login">{{ 'NAVBAR.LOGIN' | translate }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/sign-in">Prijava</a>
+            <a class="nav-link" href="/sign-in">{{ 'NAVBAR.SIGN_IN' | translate }}</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto" *ngIf="authInfo.IsAuthenticated">
           <li class="nav-item">
-            <a class="nav-link" href="slideshow">Prezentacija</a>
+            <a class="nav-link" href="slideshow">{{ 'NAVBAR.PRESENTATION' | translate }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/notes">Hvaležnosti</a>
+            <a class="nav-link" href="/notes">{{ 'NAVBAR.GRATITUDES' | translate }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/info">Info</a>
+            <a class="nav-link" href="/info">{{ 'NAVBAR.INFO' | translate }}</a>
           </li>
           <li class="nav-item" *ngIf="authInfo.NeedLogin">
-            <a class="nav-link" href="#" (click)="logout()">Izpis</a>
+            <a class="nav-link" href="#" (click)="logout()">{{ 'NAVBAR.LOGOUT' | translate }}</a>
           </li>
         </ul>
       </div>

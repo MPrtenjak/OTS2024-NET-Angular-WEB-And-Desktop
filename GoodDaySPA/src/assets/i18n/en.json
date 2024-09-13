@@ -1,3 +1,41 @@
 {
-    "APP_NAME": "GoodDay"
+    "APP_NAME": "GoodDay",
+    "NAVBAR": {
+        "LANGUAGE": "Change Language",
+        "PRESENTATION": "Presentation",
+        "SIGN_IN": "Sign in",
+        "LOGIN": "Login",
+        "LOGOUT": "Logout",
+        "GRATITUDES": "Gratitudes",
+        "INFO": "Info",
+        "AUTH_INFO": {
+            "SYSTEM": "System",
+            "USER": "User"
+        }
+    },
+    "MONTH_DAY": {
+        "RANDOMIZE": "Get random data"
+    },
+    "GRATITUDE": {
+        "GRATITUDE": "Gratitude",
+        "COMMIT": "Commit"
+    },
+    "INFO": {
+        "FILE": "File",
+        "PATH": "Path",
+        "ENVIRONMENT": "Environment",
+        "USER": "User",
+        "ENVIRONMENT_VARIABLES": "Environment variables"
+    },
+    "LOGIN": {
+        "USERNAME": "Username",
+        "PASSWORD": "Password",
+        "LOGIN": "Login"
+    },
+    "SIGN_IN": {
+        "USERNAME": "Username",
+        "PASSWORD": "Password",
+        "PASSWORD2": "Repeat password",
+        "SIGN_IN":"Sign in"
+    }
 }

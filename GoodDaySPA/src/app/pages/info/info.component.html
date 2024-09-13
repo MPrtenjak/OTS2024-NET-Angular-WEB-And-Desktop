@@ -1,35 +1,24 @@
 <div class="container  animate__animated animate__zoomIn" *ngIf="infoData">
-  <!--
-  <table>
-    <tbody>
-      <tr>
-        <td>Datoteka</td>
-        <td style="width: 80%"><pre>{{ infoData.configuration | json }}</pre></td>
-      </tr>
-    </tbody>
-  </table>
-  -->
-
   <table class="table">
     <tbody>
       <tr>
-        <th class="first-column" scope="row">Datoteka</th>
+        <th class="first-column" scope="row">{{ 'INFO.FILE' | translate }}</th>
         <td>{{ infoData.name }}</td>
       </tr>
       <tr>
-        <th class="first-column"  scope="row">Pot</th>
+        <th class="first-column"  scope="row">{{ 'INFO.PATH' | translate }}</th>
         <td>{{ infoData.path }}</td>
       </tr>
       <tr>
-        <th class="first-column"  scope="row">Okolje</th>
+        <th class="first-column"  scope="row">{{ 'INFO.ENVIRONMENT' | translate }}</th>
         <td>{{ infoData.currentEnvironment }}</td>
       </tr>
       <tr>
-        <th class="first-column"  scope="row">Uporabnik</th>
+        <th class="first-column"  scope="row">{{ 'INFO.USER' | translate }}</th>
         <td>{{ infoData.user }}</td>
       </tr>
       <tr>
-        <th class="first-column"  scope="row">Nastavitve okolja</th>
+        <th class="first-column"  scope="row">{{ 'INFO.ENVIRONMENT_VARIABLES' | translate }}</th>
         <td>
           <pre>{{ infoData.configuration | json }}</pre>
         </td>

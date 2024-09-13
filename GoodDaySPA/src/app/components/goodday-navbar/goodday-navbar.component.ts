@@ -28,6 +28,6 @@ export class GooddayNavbarComponent {
   lang(): void {
     this.cnt = ++this.cnt % 2;
 
-    this.appComponent.changeLanguage((this.cnt === 0) ? 'en' : 'sl');
+    this.appComponent.changeLanguage((this.cnt === 1) ? 'en' : 'sl');
   }
 }

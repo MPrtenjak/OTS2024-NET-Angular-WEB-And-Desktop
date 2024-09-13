@@ -20,17 +20,17 @@
 
     <form class="p-3">
       <div class="mb-3">
-        <input [(ngModel)]="gratitude1" name="gratitude1" type="text" class="form-control" placeholder="Hvaležnost 1">
+        <input [(ngModel)]="gratitude1" name="gratitude1" type="text" class="form-control" placeholder="{{ 'GRATITUDE.GRATITUDE' | translate }} 1">
       </div>
       <div class="mb-3">
-        <input [(ngModel)]="gratitude2" name="gratitude2" type="text" class="form-control" placeholder="Hvaležnost 2">
+        <input [(ngModel)]="gratitude2" name="gratitude2" type="text" class="form-control" placeholder="{{ 'GRATITUDE.GRATITUDE' | translate }} 2">
       </div>
       <div class="mb-3">
-        <input [(ngModel)]="gratitude3" name="gratitude3" type="text" class="form-control" placeholder="Hvaležnost 3">
+        <input [(ngModel)]="gratitude3" name="gratitude3" type="text" class="form-control" placeholder="{{ 'GRATITUDE.GRATITUDE' | translate }} 3">
       </div>
 
       <div class="text-center">
-        <button type="submit" class="btn btn-success" [disabled]="isReadOnly" (click)="saveData()">Potrdi</button>
+        <button type="submit" class="btn btn-success" [disabled]="isReadOnly" (click)="saveData()">{{ 'GRATITUDE.COMMIT' | translate }}</button>
       </div>
     </form>
   </div>

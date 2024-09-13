@@ -4,11 +4,12 @@ import { ApiService } from '@app/api.service';
 import dayjs, { Dayjs } from 'dayjs'
 import { GratitudeByDate } from '@rest_data/gratitudeByDate';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-gratitude',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './gratitude.component.html',
   styleUrl: './gratitude.component.scss'
 })
