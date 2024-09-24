@@ -39,6 +39,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/animate.css/animate.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/flag-icons/css/flag-icons.min.css",
               "src/cs-github-highlight.css",
               "src/styles.scss"              
             ],
@@ -64,7 +65,8 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"
@@ -104,6 +106,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/animate.css/animate.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/flag-icons/css/flag-icons.min.css",
               "src/cs-github-highlight.css",
               "src/styles.css"              
             ],
