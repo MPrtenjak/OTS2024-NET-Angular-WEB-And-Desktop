@@ -1,7 +1,8 @@
 {
     "APP_NAME": "GoodDay",
     "NAVBAR": {
-        "LANGUAGE": "Change Language",
+        "LANGUAGE": "Language",
+        "LANGUAGE_FLAG": "fi-gb",
         "PRESENTATION": "Presentation",
         "SIGN_IN": "Sign in",
         "LOGIN": "Login",

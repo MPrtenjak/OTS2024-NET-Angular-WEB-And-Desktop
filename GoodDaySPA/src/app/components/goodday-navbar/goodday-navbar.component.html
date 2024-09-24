@@ -20,12 +20,10 @@
             </div>
           </li>
         </ul>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" (click)="lang()">{{ 'NAVBAR.LANGUAGE' | translate }}</a>
-          </li>
-        </ul>        
         <ul class="navbar-nav ms-auto" *ngIf="!authInfo.IsAuthenticated">
+          <li class="nav-item">
+            <a class="nav-link" (click)="lang()"><span class="fi {{ 'NAVBAR.LANGUAGE_FLAG' | translate }}"></span> {{ 'NAVBAR.LANGUAGE' | translate }}</a>
+          </li>          
           <li class="nav-item">
             <a class="nav-link" href="slideshow">{{ 'NAVBAR.PRESENTATION' | translate }}</a>
           </li>
@@ -37,6 +35,9 @@
           </li>
         </ul>
         <ul class="navbar-nav ms-auto" *ngIf="authInfo.IsAuthenticated">
+          <li class="nav-item">
+            <a class="nav-link" (click)="lang()"><span class="fi {{ 'NAVBAR.LANGUAGE_FLAG' | translate }}"></span> {{ 'NAVBAR.LANGUAGE' | translate }}</a>
+          </li>            
           <li class="nav-item">
             <a class="nav-link" href="slideshow">{{ 'NAVBAR.PRESENTATION' | translate }}</a>
           </li>

@@ -1,7 +1,8 @@
 {
     "APP_NAME": "PrijetenDan",
     "NAVBAR": {
-        "LANGUAGE": "Spremeni jezik",
+        "LANGUAGE": "Jezik",
+        "LANGUAGE_FLAG": "fi-si",        
         "PRESENTATION": "Prezentacija",
         "SIGN_IN": "Vpis",
         "LOGIN": "Prijava",
