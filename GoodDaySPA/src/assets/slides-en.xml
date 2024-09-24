@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<slides>
+
+<!--  SLIDE -->
+<slide>
+    <caption>To the web or to the desktop 🤔?</caption>
+    <content>
+<div class="text-center">    
+    <img class="full-screen-height" src="/assets/imgs/net-or-web-small.webp" />
+</div>    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>OTS 2023 - WinForms "face-lift"</caption>
+    <content>
+<div class="slide-h2"><u>2023</u>: We have an <b>old WinForms application</b> that we want to <b>improve the UI</b></div>
+
+<ul>
+  <li><i>What is Blazor Hybrid and how can it help us upgrade software?</i></li>
+  <li>We want to restore the shine to old things</li>
+  <li>We can still have "old developers" who need to upgrade the software or "younger developers" who don't like "old stuff".</li>
+  <li><b>IMPORTANT!</b> - during the upgrade, we used the old code, we only replaced the user interface!</li>
+</ul>
+
+<div class="text-center">
+    <img src="/assets/imgs/ots2023.png" />
+</div>    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Angular and .NET as competition to desktop applications</caption>
+    <content>
+<ul>
+  <li>Now we have young developers who want to develop for the web!</li>
+  <li>It's not just the developers, <b>THE CLIENT IS IMPORTANT!</b></li>
+  <li>How to develop an application that can <b>run both on the web and on the desktop</b></li>
+</ul>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Good Day Application</caption>
+    <content>
+<div class="slide-h2">Purpose</div>
+
+Every day the user enters up to 3 short descriptions of why they are grateful
+
+<div class="slide-h2">Requirements</div>
+
+<ul>
+<li>The app should work in:</li>
+  <ul>
+    <li><b>Azure</b> - <i>requires login</i></li>
+    <li><b>Windows</b></li>
+      <ul>
+        <li><b>As a regular application</b> - <i>does not require login</i>, the current user is logged in</li>
+        <li><b>As a service</b> - <i>does not require login</i>, the current user is logged in</li>
+      </ul>
+    <li><b>Linux</b></li>
+      <ul>
+        <li><b>As a regular application</b> - <i>does not require login</i>, the current user is logged in</li>
+        <li><b>As a service/daemon</b> - <i>requires login</i></li>
+      </ul>
+  </ul>
+<li>Transfer between systems is <b>copy / paste</b></li>
+</ul>
+
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Good Day Application</caption>
+    <content>
+<div class="slide-h2">Server-side - .NET (core)</div>
+<ul>
+<li><b>Provides API</b> used by the user interface</li>
+<li>Handles <b>data access</b></li>
+</ul>
+
+<div class="slide-h2">User-side - Angular</div>
+<ul>
+<li><b>Uses API</b> for data access</li>
+<li>Renders the <b>user interface</b> for the user</li>
+</ul>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>.NET → API → Swagger</caption>
+    <content>
+<div class="text-center">    
+    <img src="/assets/imgs/swagger.png" />
+</div>    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>wwwroot - by default uses Kestrel web server</caption>
+    <content>
+<div class="text-center">    
+    <img src="/assets/imgs/wwwroot.png" />
+</div>    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>If there is an application in the folder, WebApi will display the application</caption>
+    <content>
+<div class="text-center">    
+    <img src="/assets/imgs/app.png" />
+</div>    
+    </content>
+</slide>
+
+
+<!--  SLIDE -->
+<slide>
+    <caption>DEMONSTRATION</caption>
+    <content>
+    </content>
+</slide>
+
+
+<!--  SLIDE -->
+<slide>
+    <caption>.NET natively runs on different operating systems</caption>
+    <content>
+<div class="text-center">    
+    <img src="/assets/imgs/runtimes.png" />
+</div>	    
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>What to pay attention to - .NET, server-side</caption>
+    <content>
+<div class="slide-h3">`ISupportedEnvironment`</div>
+<div class="slide-h3">Application initialization</div>
+<div class="slide-h3">Environment detection</div>
+<div class="slide-h3">User detection</div>
+<div class="slide-h3">CORS (Cross-Origin Resource Sharing)</div>
+<div class="slide-h3">Routing</div>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<!--
+<slide>
+    <caption>`ISupportedEnvironment`</caption>
+    <content>
+<pre>
+public interface ISupportedEnvironment
+{
+  string Name { get; }
+  bool RequireLogin { get => true; }
+  bool OpenBrowser { get => false; }
+  void ApplyDaemon(ConfigureHostBuilder configureHostBuilder) { }
+}
+</pre>
+
+<pre>
+public class WindowsAsProgramEnvironment : ISupportedEnvironment
+{
+  public string Name => nameof(WindowsAsProgramEnvironment);
+  public bool RequireLogin { get => false; }
+  public bool OpenBrowser { get => true; }
+}
+</pre>
+
+<pre>
+public class LinuxAsServiceEnvironment : ISupportedEnvironment
+{
+  public string Name => nameof(LinuxAsServiceEnvironment);
+  public void ApplyDaemon(ConfigureHostBuilder configureHostBuilder) 
+    => configureHostBuilder.UseSystemd();
+}
+</pre>
+    </content>
+</slide>
+-->
+
+<!--  SLIDE -->
+<slide>
+    <caption>What to pay attention to - Angular, user interface</caption>
+    <content>
+
+<div>There are <b>no special features</b> here, as it is a completely <b>regular Angular application</b> that <b>communicates with the server</b> via API</div>
+
+<div class="slide-h3">
+Since it <b>runs within a .NET application</b> that serves as a server, Angular can get its own address via JavaScript: `<code>window.location.origin</code>`
+</div>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>DEMONSTRATION II</caption>
+    <content>
+<div class="slide-h2">What I will do</div>
+<div class="slide-h3"><b>WIN: </b>Run the application in <i>Windows</i> environment as a "regular application"</div>
+<div class="slide-h3"><b>LX: </b><i>Copy</i> the application to <i>LINUX</i></div>
+<div class="slide-h3"><b>LX: </b>Run the application in <i>Linux</i> environment as a "regular application"</div>
+<div class="slide-h3"><b>WIN: </b>Run the application in <i>Windows</i> environment as a "service"</div>
+<div class="slide-h3"><b>LX: </b>Run the application in <i>Linux</i> environment as a "service/daemon"</div>
+<div class="slide-h3"><b>AZ: </b><i>Copy</i> the application to <i>Azure</i></div>
+<div class="slide-h3"><b>AZ: </b>Run the application on <i>Azure</i></div>
+    </content>
+</slide>
+
+<!--  SLIDE -->
+<slide>
+    <caption>Questions and Answers</caption>
+    <content>
+<div class="slide-h2">Matjaž Prtenjak, ENDAVA d.o.o</div>
+
+<table>
+<tr><td><i class="fa-solid fa-briefcase" style="color: red"></i></td><td class="wide">:</td><td><a href="https://www.endava.com/en/Endava">https://www.endava.com/en/Endava</a></td></tr>
+<tr><td><i class="fa-solid fa-brands fa-github" style="color: red"></i></td><td class="wide">:</td><td><b>@MPrtenjak</b></td></tr>
+<tr><td><i class="fa-solid fa-envelope"></i></td><td class="wide">:</td><td><b>matjaz.prtenjak@endava.com</b></td></tr>
+<tr><td><i class="fa-solid fa-house" style="color: red"></i></td><td class="wide">:</td><td><b><a href="https://mnet.si">https://mnet.si</a></b></td></tr>
+<tr><td><i class="fa-solid fa-pencil" style="color: red"></i></td><td class="wide">:</td><td><b><a href="https://code-maze.com/author/mprtenjak/">https://code-maze.com/author/mprtenjak/</a></b></td></tr>
+</table>
+
+    </content>
+</slide>
+
+</slides>

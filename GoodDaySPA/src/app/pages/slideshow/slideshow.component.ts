@@ -5,11 +5,12 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { SlideshowCommanderComponent } from './components/slideshow-commander/slideshow-commander.component';
 import { SlideshowPresenterComponent } from './components/slideshow-presenter/slideshow-presenter.component';
 import { SlideShowPosition, SlideData, initialSlideshowPosition } from './data/slideshowData';
+import { TranslateService, LangChangeEvent, TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-slideshow',
   standalone: true,
-  imports: [CommonModule, CarouselModule, SlideshowCommanderComponent, SlideshowPresenterComponent],
+  imports: [CommonModule, CarouselModule, SlideshowCommanderComponent, SlideshowPresenterComponent, TranslateModule],
   templateUrl: './slideshow.component.html',
   styleUrls: ['./slideshow.component.scss']
 })
@@ -17,8 +18,10 @@ export class SlideshowComponent {
   slideData: SlideData[] = [];
   slideShowPosition: SlideShowPosition = initialSlideshowPosition;
 
-  constructor(private route: ActivatedRoute, private location: Location) {
-    this.loadSlides();
+  constructor(private route: ActivatedRoute, private location: Location, private translate: TranslateService) {
+    console.log("slides constructor");
+    console.info(translate);
+    this.loadSlides(translate.currentLang);
   }
 
   ngOnInit(): void {
@@ -32,10 +35,17 @@ export class SlideshowComponent {
       const slideId = this.getSlideIdFromRoute(params);
       this.slideShowPosition.currentSlide = slideId;
     });
+
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.loadSlides(event.lang);
+    });
   }
 
-  async loadSlides() {
-    const response = await fetch('/assets/slides.xml');
+  async loadSlides(lang: string | null = null) {
+    const language = lang || 'sl'; 
+    const language_file = `/assets/slides-${language}.xml`;
+    console.log("loading ", language_file)
+    const response = await fetch(language_file);
     if (response.ok) {
       const xmlText = await response.text();
       const parser = new DOMParser();
