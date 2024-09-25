@@ -49,13 +49,6 @@ export class AppComponent implements OnInit, OnDestroy {
       const navigationEndEvent = event as NavigationEnd;
       this.isSlideshowRoute = navigationEndEvent.url.includes('/slideshow');
     });
-    
-    /*
-    // does not work!
-    ).subscribe((event: NavigationEnd) => {
-      this.isSlideshowRoute = event.url.includes('/slideshow');
-    });
-    */
   }  
 
   ngOnDestroy(): void {

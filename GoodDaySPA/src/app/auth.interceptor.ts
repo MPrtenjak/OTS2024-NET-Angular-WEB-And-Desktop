@@ -19,7 +19,6 @@ export class AuthInterceptor implements HttpInterceptor {
         .set('Accept-Language', `${currentLang},en;q=0.5`)
     });
 
-    console.log('AuthInterceptor: intercept I', cloned);
     const token = this.authService.getToken();
     if (token) {
       cloned = cloned.clone({
@@ -27,7 +26,6 @@ export class AuthInterceptor implements HttpInterceptor {
       });
     } 
 
-    console.log('AuthInterceptor: intercept II', cloned);
     return next.handle(cloned);
   }
 }

@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { AuthInfo } from '@rest_data/authInfo';
 import { TranslateModule} from '@ngx-translate/core';
 import { AppComponent } from '@app/app.component';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-goodday-navbar',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './goodday-navbar.component.html',
   styleUrl: './goodday-navbar.component.scss'
 })
@@ -17,7 +18,7 @@ export class GooddayNavbarComponent {
   @Output() logoutClick = new EventEmitter<void>();
   cnt: number = 0;
 
-  constructor(private appComponent: AppComponent) {} // Inject AppComponent
+  constructor(private appComponent: AppComponent, private router: Router) {} // Inject AppComponent
 
   isCollapsed: boolean = true;
 
@@ -29,5 +30,9 @@ export class GooddayNavbarComponent {
     this.cnt = ++this.cnt % 2;
 
     this.appComponent.changeLanguage((this.cnt === 1) ? 'en' : 'sl');
+  }
+
+  reroute(newRoute: string): void {
+    this.router.navigate(['/notes']);
   }
 }

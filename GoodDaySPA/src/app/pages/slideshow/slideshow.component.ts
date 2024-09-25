@@ -19,8 +19,6 @@ export class SlideshowComponent {
   slideShowPosition: SlideShowPosition = initialSlideshowPosition;
 
   constructor(private route: ActivatedRoute, private location: Location, private translate: TranslateService) {
-    console.log("slides constructor");
-    console.info(translate);
     this.loadSlides(translate.currentLang);
   }
 
@@ -44,7 +42,6 @@ export class SlideshowComponent {
   async loadSlides(lang: string | null = null) {
     const language = lang || 'sl'; 
     const language_file = `/assets/slides-${language}.xml`;
-    console.log("loading ", language_file)
     const response = await fetch(language_file);
     if (response.ok) {
       const xmlText = await response.text();
