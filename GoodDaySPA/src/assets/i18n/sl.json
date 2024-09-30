@@ -31,12 +31,18 @@
     "LOGIN": {
         "USERNAME": "Uporabniško ime",
         "PASSWORD": "Geslo",
-        "LOGIN": "Prijava"
+        "LOGIN": "Prijava",
+        "USERNAME_PLACEHOLDER": "Vnesi uporabniško ime",
+        "PASSWORD_PLACEHOLDER": "Vnesi geslo"
+
     },
     "SIGN_IN": {
         "USERNAME": "Uporabniško ime",
         "PASSWORD": "Geslo",
         "PASSWORD2": "Ponovi geslo",
-        "SIGN_IN": "Vpis"
+        "SIGN_IN": "Vpis",
+        "USERNAME_PLACEHOLDER": "Vnesi uporabniško ime",
+        "PASSWORD_PLACEHOLDER": "Vnesi geslo",
+        "PASSWORD2_PLACEHOLDER": "Ponovi geslo"
     }
 }

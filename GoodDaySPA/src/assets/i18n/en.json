@@ -31,12 +31,17 @@
     "LOGIN": {
         "USERNAME": "Username",
         "PASSWORD": "Password",
-        "LOGIN": "Login"
+        "LOGIN": "Login",
+        "USERNAME_PLACEHOLDER": "Enter your username",
+        "PASSWORD_PLACEHOLDER": "Enter your password"
     },
     "SIGN_IN": {
         "USERNAME": "Username",
         "PASSWORD": "Password",
         "PASSWORD2": "Repeat password",
-        "SIGN_IN":"Sign in"
+        "SIGN_IN":"Sign in",
+        "USERNAME_PLACEHOLDER": "Enter your username",
+        "PASSWORD_PLACEHOLDER": "Enter your password",
+        "PASSWORD2_PLACEHOLDER": "Repeat your password"
     }
 }
