@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AuthInfo } from '@rest_data/authInfo';
 import { TranslateModule} from '@ngx-translate/core';
 import { AppComponent } from '@app/app.component';
+import { AuthService } from '@app/auth.service';
 import { RouterModule, Router } from '@angular/router';
 
 @Component({
@@ -18,7 +19,7 @@ export class GooddayNavbarComponent {
   @Output() logoutClick = new EventEmitter<void>();
   cnt: number = 0;
 
-  constructor(private appComponent: AppComponent, private router: Router) {} // Inject AppComponent
+  constructor(private appComponent: AppComponent, private router: Router, private authService: AuthService) {} // Inject AppComponent
 
   isCollapsed: boolean = true;
 
@@ -34,5 +35,9 @@ export class GooddayNavbarComponent {
 
   reroute(newRoute: string): void {
     this.router.navigate(['/notes']);
+  }
+
+  clearApp(): void {
+    this.authService.logout();
   }
 }

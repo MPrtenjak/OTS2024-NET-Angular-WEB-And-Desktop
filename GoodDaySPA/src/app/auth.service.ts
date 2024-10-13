@@ -45,13 +45,17 @@ export class AuthService {
     return authenticated;
   }
 
-  logout(): void {
+  clear(): void {
     localStorage.removeItem('jwtToken');
     localStorage.removeItem('userName');    
     localStorage.removeItem('env');    
     localStorage.removeItem('need-login');
 
     this.authInfoSubject.next(userNotAuthenticated());
+  }
+
+  logout(): void {
+    this.clear();
 
     this.router.navigate(['/login']);
   }
