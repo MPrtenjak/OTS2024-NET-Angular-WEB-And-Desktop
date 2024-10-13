@@ -8,10 +8,8 @@ public static class ServiceExtensionsForSwagger
 {
   public static IServiceCollection AddSwaggerSupport(this IServiceCollection services, IThisApplication thisApp)
   {
-    /*
     if (!thisApp.RunningInDebugMode)
       return services;
-    */
 
     var bearerSecurityScheme = new OpenApiSecurityScheme
     {
@@ -51,8 +49,7 @@ public static class ServiceExtensionsForSwagger
 
   public static WebApplication UseSwaggerIfSupported(this WebApplication app, IThisApplication thisApp)
   {
-    
-    if (true /*thisApp.RunningInDebugMode*/)
+    if (thisApp.RunningInDebugMode)
     {
       app.UseSwagger();
       app.UseSwaggerUI();
